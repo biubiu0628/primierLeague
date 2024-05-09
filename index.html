@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        Glory Glory Man United
+    </title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <h1 class="title">Team stats</h1>
+    <main>
+        <div class="team-stats">
+            <p>Team: <span id="team"></span></p>
+            <p>Sport: <span id="sport"></span></p>
+            <p>Year: <span id="year"></span></p>
+            <p>Head coach: <span id="head-coach"></span></p>
+        </div>
+        <label class="options-label" for="players">Filter Teammates:</label>
+        <select name="players" id="players">
+            <option value="all">All Players</option>
+            <option value="FW">Position FW</option>
+            <option value="MF">Position MF</option>
+            <option value="DF">Position DE</option>
+            <option value="GK">Position GK</option>
+        </select>
+        <div class="cards" id="player-cards">
+            <div class="player-card-FW">
+                <img src="./images/garnacho.jpg" />
+                <div class="info">
+                    <h2>Alejandro Garnacho</h2>
+                    <p>Position: FW</p>
+                    <p>Number: 1</p>
+                    <p>National : Argentina</p>
+                </div>
+            </div>
+            <div class="player-card-GK">
+                <img src="./images/onana.jpg" />
+                <div class="info">
+                    <h2>André Onana</h2>
+                    <p>Position: GK</p>
+                    <p>Number: 2</p>
+                    <p>National : Cameroon</p>
+                </div>
+            </div>
+            <div class="player-card-GK">
+                <img src="./images/Bayındır.jpg" />
+                <div class="info">
+                    <h2>Altay Bayındır</h2>
+                    <p>Position: GK</p>
+                    <p>Number: 3</p>
+                    <p>National : Türkiye</p>
+                </div>
+            </div>
+            <div class="player-card-GK">
+                <img src="./images/Heaton.jpg" />
+                <div class="info">
+                    <h2>Tom Heaton</h2>
+                    <p>Position: GK</p>
+                    <p>Number: 4</p>
+                    <p>National : England</p>
+                </div>
+            </div>
+            <div class="player-card-DF">
+                <img src="./images/Martínez.jpg" />
+                <div class="info">
+                    <h2>Lisandro Martínez</h2>
+                    <p>Position: DF</p>
+                    <p>Number: 5</p>
+                    <p>National : Argentina</p>
+                </div>
+            </div>
+            <div class="player-card-DF">
+                <img src="./images/Varane.jpg" />
+                <div class="info">
+                    <h2>Raphaël Varane</h2>
+                    <p>Position: DF</p>
+                    <p>Number: 6</p>
+                    <p>National : France</p>
+                </div>
+            </div>
+            <div class="player-card-DF">
+                <img src="./images/Maguire.jpg" />
+                <div class="info">
+                    <h2>Harry Maguire</h2>
+                    <p>Position: DF</p>
+                    <p>Number: 7</p>
+                    <p>National : England</p>
+                </div>
+            </div>
+            <div class="player-card-DF">
+                <img src="./images/victor.jpg" />
+                <div class="info">
+                    <h2>Victor Lindelöf</h2>
+                    <p>Position: DF</p>
+                    <p>Number: 8</p>
+                    <p>National : Sweden</p>
+                </div>
+            </div>
+            <div class="player-card-DF">
+                <img src="./images/jonny.jpg" />
+                <div class="info">
+                    <h2>Jonny Evans</h2>
+                    <p>Position: DF</p>
+                    <p>Number: 9</p>
+                    <p>National : N. Ireland</p>
+                </div>
+            </div>
+            <div class="player-card-DF">
+                <img src="./images/shaw.jpg" alt="" />
+                <div class="info">
+                    <h2>Luke Shaw</h2>
+                    <p>Position: DF</p>
+                    <p>Number: 10</p>
+                    <p>National : England</p>
+                </div>
+            </div>
+            <div class="player-card-DF">
+                <img src="./images/diogo.jpg" alt="" />
+                <div class="info">
+                    <h2>Diogo Dalot</h2>
+                    <p>Position: DF</p>
+                    <p>Number: 11</p>
+                    <p>National : Portugal</p>
+                </div>
+            </div>
+            <div class="player-card-DF">
+                <img src="./images/wan.jpg" alt="" />
+                <div class="info">
+                    <h2>Wan-Bissaka</h2>
+                    <p>Position: DF</p>
+                    <p>Number: 12</p>
+                    <p>National : England</p>
+                </div>
+            </div>
+            <div class="player-card-MF">
+                <img src="./images/scott.jpg" alt="" />
+                <div class="info">
+                    <h2>Scott McTominay</h2>
+                    <p>Position: MF</p>
+                    <p>Number: 13</p>
+                    <p>National : Scotland</p>
+                </div>
+            </div>
+            <div class="player-card-MF">
+                <img src="./images/case.jpg" alt="" />
+                <div class="info">
+                    <h2>Casemiro</h2>
+                    <p>Position: MF</p>
+                    <p>Number: 14</p>
+                    <p>National : Brazil</p>
+                </div>
+            </div>
+            <div class="player-card-MF">
+                <img src="./images/amrabat.jpg" alt="" />
+                <div class="info">
+                    <h2>Sofyan Amrabat</h2>
+                    <p>Position: MF</p>
+                    <p>Number: 15</p>
+                    <p>National : Morocco</p>
+                </div>
+            </div>
+            <div class="player-card-MF">
+                <img src="./images/mainoo.jpg" alt="" />
+                <div class="info">
+                    <h2>Kobbie Mainoo</h2>
+                    <p>Position: MF</p>
+                    <p>Number: 16</p>
+                    <p>National : England</p>
+                </div>
+            </div>
+            <div class="player-card-MF">
+                <img src="./images/eriksen.jpg" alt="" />
+                <div class="info">
+                    <h2>Christian Eriksen</h2>
+                    <p>Position: MF</p>
+                    <p>Number: 17</p>
+                    <p>National : Denmark</p>
+                </div>
+            </div>
+            <div class="player-card-MF">
+                <img src="./images/bruno.jpg" alt="" />
+                <div class="info">
+                    <h2>(C) Bruno Fernandes</h2>
+                    <p>Position: MF</p>
+                    <p>Number: 18</p>
+                    <p>National : Portugal</p>
+                </div>
+            </div>
+            <div class="player-card-MF">
+                <img src="./images/mason.jpg" alt="" />
+                <div class="info">
+                    <h2>Mason Mount</h2>
+                    <p>Position: MF</p>
+                    <p>Number: 19</p>
+                    <p>National : England</p>
+                </div>
+            </div>
+            <div class="player-card-FW">
+                <img src="./images/rashford.jpg" alt="" />
+                <div class="info">
+                    <h2>Marcus Rashford</h2>
+                    <p>Position: FW</p>
+                    <p>Number: 20</p>
+                    <p>National : England</p>
+                </div>
+            </div>
+            <div class="player-card-FW">
+                <img src="./images/antony.jpg" alt="" />
+                <div class="info">
+                    <h2>Antony</h2>
+                    <p>Position: FW</p>
+                    <p>Number: 21</p>
+                    <p>National : Brazil</p>
+                </div>
+            </div>
+            <div class="player-card-FW">
+                <img src="./images/amad.jpg" alt="" />
+                <div class="info">
+                    <h2>Amad Diallo</h2>
+                    <p>Position: FW</p>
+                    <p>Number: 22</p>
+                    <p>National : Ivory Coast</p>
+                </div>
+            </div>
+            <div class="player-card-FW">
+                <img src="./images/rasmus.jpg" alt="" />
+                <div class="info">
+                    <h2>Rasmus Højlund</h2>
+                    <p>Position: FW</p>
+                    <p>Number: 23</p>
+                    <p>National : Denmark</p>
+                </div>
+            </div>
+            <div class="player-card-FW">
+                <img src="./images/martial.jpg" alt="" />
+                <div class="info">
+                    <h2>Anthony Martial</h2>
+                    <p>Position: FW</p>
+                    <p>Number: 24</p>
+                    <p>National : France</p>
+                </div>
+            </div>
+            <div class="player-card-DF">
+                <img src="./images/willy.jpg" alt="" />
+                <div class="info">
+                    <h2>Willy Kambwala</h2>
+                    <p>Position: DF</p>
+                    <p>Number: 25</p>
+                    <p>National : France</p>
+                </div>
+            </div>
+            <div class="player-card-DF">
+                <img src="./images/tyrell.jpg" alt="" />
+                <div class="info">
+                    <h2>Tyrell Malacia</h2>
+                    <p>Position: DF</p>
+                    <p>Number: 26</p>
+                    <p>National : Netherlands</p>
+                </div>
+            </div>
+            <div class="player-card-MF">
+                <img src="./images/shola.jpg" alt="" />
+                <div class="info">
+                    <h2>Shola Shoretire</h2>
+                    <p>Position: MF</p>
+                    <p>Number: 27</p>
+                    <p>National : England</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>&copy; freeCodeCamp</footer>
+    <script src="./script.js"></script>
+</body>
+
+</html>
