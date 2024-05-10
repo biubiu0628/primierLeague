@@ -1,9 +1,12 @@
-const teamName = document.getElementById("team");
+const teamsDropdownList = document.getElementById("teams");
 const typeOfSport = document.getElementById("sport");
-const premierLeague = document.getElementById("year");
+const preLeague = document.getElementById("year");
 const headCoach = document.getElementById("head-coach");
 const playerCards = document.getElementById("player-cards");
 const playersDropdownList = document.getElementById("players");
+
+const premierLeagueTeam = {};
+
 const myFavoriteFootballTeam = {
   team: "Manchester United",
   sport: "Football",
@@ -15,220 +18,445 @@ const myFavoriteFootballTeam = {
   },
   players: [
     {
-      image: "./images/garnacho.jpg",
+      image: "./imagesMU/garnacho.jpg",
       name: "Alejandro Garnacho",
       position: "FW",
       number: 1,
       isCaptain: false,
       national: "Argentina",
+      team: "MU",
     },
     {
-      image: "./images/onana.jpg",
+      image: "./imagesMU/onana.jpg",
       name: "André Onana",
       position: "GK",
       number: 2,
       isCaptain: false,
       national: "Cameroon",
+      team: "MU",
     },
     {
-      image: "./images/Bayındır.jpg",
+      image: "./imagesMU/Bayındır.jpg",
       name: "Altay Bayındır",
       position: "GK",
       number: 3,
       isCaptain: false,
       national: "Türkiye",
+      team: "MU",
     },
     {
-      image: "./images/Heaton.jpg",
+      image: "./imagesMU/Heaton.jpg",
       name: "Tom Heaton",
       position: "GK",
       number: 4,
       isCaptain: false,
       national: "England",
+      team: "MU",
     },
     {
-      image: "./images/Martínez.jpg",
+      image: "./imagesMU/Martínez.jpg",
       name: "Lisandro Martínez",
       position: "DF",
       number: 5,
       isCaptain: false,
       national: "Argentina",
+      team: "MU",
     },
     {
-      image: "./images/Varane.jpg",
+      image: "./imagesMU/Varane.jpg",
       name: "Raphaël Varane",
       position: "DF",
       number: 6,
       isCaptain: false,
       nickname: "France",
+      team: "MU",
     },
     {
-      image: "./images/Maguire.jpg",
+      image: "./imagesMU/Maguire.jpg",
       name: "Harry Maguire",
       position: "DF",
       number: 7,
       isCaptain: false,
       national: "England",
+      team: "MU",
     },
     {
-      image: "./images/victor.jpg",
+      image: "./imagesMU/victor.jpg",
       name: "Victor Lindelöf",
       position: "DF",
       number: 8,
       isCaptain: false,
       national: "Sweden",
+      team: "MU",
     },
     {
-      image: "./images/jonny.jpg",
+      image: "./imagesMU/jonny.jpg",
       name: "Jonny Evans",
       position: "DF",
       number: 9,
       isCaptain: false,
       national: "N. Ireland",
+      team: "MU",
     },
     {
-      image: "./images/shaw.jpg",
+      image: "./imagesMU/shaw.jpg",
       name: "Luke Shaw",
       position: "DF",
       number: 10,
       isCaptain: false,
       national: "England",
+      team: "MU",
     },
     {
-      image: "./images/diogo.jpg",
+      image: "./imagesMU/diogo.jpg",
       name: "Diogo Dalot",
       position: "DF",
       number: 11,
       isCaptain: false,
       national: "Portugal",
+      team: "MU",
     },
     {
-      image: "./images/wan.jpg",
+      image: "./imagesMU/wan.jpg",
       name: "Wan-Bissaka",
       position: "DF",
       number: 12,
       isCaptain: false,
       national: "England",
+      team: "MU",
     },
     {
-      image: "./images/scott.jpg",
+      image: "./imagesMU/scott.jpg",
       name: "Scott McTominay",
       position: "MF",
       number: 13,
       isCaptain: false,
       national: "Scotland",
+      team: "MU",
     },
     {
-      image: "./images/case.jpg",
+      image: "./imagesMU/case.jpg",
       name: "Casemiro",
       position: "MF",
       number: 14,
       isCaptain: false,
       national: "Brazil",
+      team: "MU",
     },
     {
-      image: "./images/amrabat.jpg",
+      image: "./imagesMU/amrabat.jpg",
       name: "Sofyan Amrabat",
       position: "MF",
       number: 15,
       isCaptain: false,
       national: "Morocco",
+      team: "MU",
     },
     {
-      image: "./images/mainoo.jpg",
+      image: "./imagesMU/mainoo.jpg",
       name: "Kobbie Mainoo",
       position: "MF",
       number: 16,
       isCaptain: false,
       national: "England",
+      team: "MU",
     },
     {
-      image: "./images/eriksen.jpg",
+      image: "./imagesMU/eriksen.jpg",
       name: "Christian Eriksen",
       position: "MF",
       number: 17,
       isCaptain: false,
       national: "Denmark",
+      team: "MU",
     },
     {
-      image: "./images/bruno.jpg",
+      image: "./imagesMU/bruno.jpg",
       name: "Bruno Fernandes",
       position: "MF",
       number: 18,
       isCaptain: true,
       national: "Portugal",
+      team: "MU",
     },
     {
-      image: "./images/mason.jpg",
+      image: "./imagesMU/mason.jpg",
       name: "Mason Mount",
       position: "MF",
       number: 19,
       isCaptain: false,
       nickname: "England",
+      team: "MU",
     },
     {
-      image: "./images/rashford.jpg",
+      image: "./imagesMU/rashford.jpg",
       name: "Marcus Rashford",
       position: "FW",
       number: 20,
       isCaptain: false,
       national: "England",
+      team: "MU",
     },
     {
-      image: "./images/antony.jpg",
+      image: "./imagesMU/antony.jpg",
       name: "Antony",
       position: "FW",
       number: 21,
       isCaptain: false,
       national: "Brazil",
+      team: "MU",
     },
     {
-      image: "./images/amad.jpg",
+      image: "./imagesMU/amad.jpg",
       name: "Amad Diallo",
       position: "FW",
       number: 22,
       isCaptain: false,
       national: "Ivory Coast",
+      team: "MU",
     },
     {
-      image: "./images/rasmus.jpg",
+      image: "./imagesMU/rasmus.jpg",
       name: "Rasmus Højlund",
       position: "FW",
       number: 23,
       isCaptain: false,
       national: "Denmark",
+      team: "MU",
     },
     {
-      image: "./images/martial.jpg",
+      image: "./imagesMU/martial.jpg",
       name: "Anthony Martial",
       position: "FW",
       number: 24,
       isCaptain: false,
       national: "France",
+      team: "MU",
     },
     {
-      image: "./images/willy.jpg",
+      image: "./imagesMU/willy.jpg",
       name: "Willy Kambwala",
       position: "DF",
       number: 25,
       isCaptain: false,
       national: "France",
+      team: "MU",
     },
     {
-      image: "./images/tyrell.jpg",
+      image: "./imagesMU/tyrell.jpg",
       name: "Tyrell Malacia",
       position: "DF",
       number: 26,
       isCaptain: false,
       national: "Netherlands",
+      team: "MU",
     },
     {
-      image: "./images/shola.jpg",
+      image: "./imagesMU/shola.jpg",
       name: "Shola Shoretire",
       position: "MF",
       number: 27,
       isCaptain: false,
       national: "Englands",
+      team: "MU",
+    },
+    {
+      image: "./imagesMC/ederson.jpg",
+      name: "Ederson",
+      position: "GK",
+      number: 1,
+      isCaptain: false,
+      national: "Brazil",
+      team: "MC",
+    },
+    {
+      image: "./imagesMC/ortega.jpg",
+      name: "Stefan Ortega",
+      position: "GK",
+      number: 2,
+      isCaptain: false,
+      national: "Germany",
+      team: "MC",
+    },
+    {
+      image: "./imagesMC/carson.jpg",
+      name: "Scott Carson",
+      position: "GK",
+      number: 3,
+      isCaptain: false,
+      national: "England",
+      team: "MC",
+    },
+    {
+      image: "./imagesMC/dias.jpg",
+      name: "Rúben Dias",
+      position: "DF",
+      number: 4,
+      isCaptain: false,
+      national: "Portugal",
+      team: "MC",
+    },
+    {
+      image: "./imagesMC/josko.jpg",
+      name: "Josko Gvardiol",
+      position: "DF",
+      number: 5,
+      isCaptain: false,
+      national: "Croatia",
+      team: "MC",
+    },
+    {
+      image: "./imagesMC/akanji.jpg",
+      name: "Manuel Akanji",
+      position: "DF",
+      number: 6,
+      isCaptain: false,
+      national: "Switzerland",
+      team: "MC",
+    },
+    {
+      image: "./imagesMC/nathan.jpg",
+      name: "Nathan Aké",
+      position: "DF",
+      number: 7,
+      isCaptain: false,
+      national: "Netherlands",
+      team: "MC",
+    },
+    {
+      image: "./imagesMC/stones.jpg",
+      name: "John Stones",
+      position: "DF",
+      number: 8,
+      isCaptain: false,
+      national: "England",
+      team: "MC",
+    },
+    {
+      image: "./imagesMC/Sergio.jpg",
+      name: "Sergio Gómez",
+      position: "DF",
+      number: 9,
+      isCaptain: false,
+      national: "Spain",
+      team: "MC",
+    },
+    {
+      image: "./imagesMC/Rico.jpg",
+      name: "Rico Lewis",
+      position: "DF",
+      number: 10,
+      isCaptain: false,
+      national: "England",
+      team: "MC",
+    },
+    {
+      image: "./imagesMC/Kyle.jpg",
+      name: "Kyle Walker",
+      position: "DF",
+      number: 11,
+      isCaptain: true,
+      national: "England",
+      team: "MC",
+    },
+    {
+      image: "./imagesMC/Rodri.jpg",
+      name: "Rodri",
+      position: "MF",
+      number: 12,
+      isCaptain: false,
+      national: "Spain",
+      team: "MC",
+    },
+    {
+      image: "./imagesMC/Matheus.jpg",
+      name: "Matheus Nunes",
+      position: "MF",
+      number: 13,
+      isCaptain: false,
+      national: "Portugal",
+      team: "MC",
+    },
+    {
+      image: "./imagesMC/Mateo.jpg",
+      name: "Mateo Kovacic",
+      position: "MF",
+      number: 14,
+      isCaptain: false,
+      national: "Croatia",
+      team: "MC",
+    },
+    {
+      image: "./imagesMC/Silva.jpg",
+      name: "Bernardo Silva",
+      position: "MF",
+      number: 15,
+      isCaptain: false,
+      national: "Portugal",
+      team: "MC",
+    },
+    {
+      image: "./imagesMC/Kevin.jpg",
+      name: "Kevin De Bruyne",
+      position: "MF",
+      number: 16,
+      isCaptain: false,
+      national: "Belgium",
+      team: "MC",
+    },
+    {
+      image: "./imagesMC/Jack.jpg",
+      name: "Jack Grealish",
+      position: "FW",
+      number: 17,
+      isCaptain: false,
+      national: "England",
+      team: "MC",
+    },
+    {
+      image: "./imagesMC/Doku.jpg",
+      name: "Jérémy Doku",
+      position: "FW",
+      number: 18,
+      isCaptain: false,
+      national: "Belgium",
+      team: "MC",
+    },
+    {
+      image: "./imagesMC/Foden.jpg",
+      name: "Phil Foden",
+      position: "FW",
+      number: 19,
+      isCaptain: false,
+      national: "England",
+      team: "MC",
+    },
+    {
+      image: "./imagesMC/Bobb.jpg",
+      name: "Oscar Bobb",
+      position: "FW",
+      number: 20,
+      isCaptain: false,
+      national: "Norway",
+      team: "MC",
+    },
+    {
+      image: "./imagesMC/Álvarez.jpg",
+      name: "Julián Álvarez",
+      position: "FW",
+      number: 21,
+      isCaptain: false,
+      national: "Argentina",
+      team: "MC",
+    },
+    {
+      image: "./imagesMC/Haaland.jpg",
+      name: "Erling Haaland",
+      position: "FW",
+      number: 22,
+      isCaptain: false,
+      national: "Norway",
+      team: "MC",
     },
   ],
 };
@@ -238,11 +466,11 @@ const { sport, team, year, players } = myFavoriteFootballTeam;
 const { coachName } = myFavoriteFootballTeam.headCoach;
 
 typeOfSport.textContent = sport;
-teamName.textContent = team;
-premierLeague.textContent = year;
+preLeague.textContent = year;
 headCoach.textContent = coachName;
 
-const setPlayerCards = (arr = players) => {
+//setTeams
+const setTeamMU = (arr = players) => {
   playerCards.innerHTML += arr
     .map(({ image, name, position, number, isCaptain, national }) => {
       return `
@@ -260,6 +488,25 @@ const setPlayerCards = (arr = players) => {
     .join("");
 };
 
+const setTeamMC = (arr = players) => {
+  playerCards.innerHTML += arr
+    .map(({ image, name, position, number, isCaptain, national }) => {
+      return `
+        <div class="player-card-${position}">
+          <img src="${image}"></img>
+          <div class="info">
+            <h2>${isCaptain ? "(C)" : ""} ${name}</h2>
+            <p>Position: ${position}</p>
+            <p>Number: ${number}</p>
+            <p>National: ${national}</p>
+          </div>
+        </div>
+      `;
+    })
+    .join("");
+};
+
+//setPlayerCards
 const setPlayerCardsFW = (arr = players) => {
   playerCards.innerHTML += arr
     .map(({ image, name, position, number, isCaptain, national }) => {
@@ -277,6 +524,7 @@ const setPlayerCardsFW = (arr = players) => {
     })
     .join("");
 };
+
 const setPlayerCardsMF = (arr = players) => {
   playerCards.innerHTML += arr
     .map(({ image, name, position, number, isCaptain, national }) => {
@@ -330,24 +578,77 @@ const setPlayerCardsGK = (arr = players) => {
     .join("");
 };
 
+const setPlayerCards = (arr = players) => {
+  playerCards.innerHTML += arr
+    .map(({ image, name, position, number, isCaptain, national }) => {
+      return `
+        <div class="player-card-${position}">
+          <img src="${image}"></img>
+          <div class="info">
+            <h2>${isCaptain ? "(C)" : ""} ${name}</h2>
+            <p>Position: ${position}</p>
+            <p>Number: ${number}</p>
+            <p>National: ${national}</p>
+          </div>
+        </div>
+      `;
+    })
+    .join("");
+};
+
+teamsDropdownList.addEventListener("change", (e) => {
+  playerCards.innerHTML = "";
+
+  switch (e.target.value) {
+    case "MU":
+      setTeamMU(players.filter((player) => player.team === "MU"));
+      break;
+    default:
+      setTeamMC(players.filter((player) => player.team === "MC"));
+      break;
+  }
+});
+
 playersDropdownList.addEventListener("change", (e) => {
   playerCards.innerHTML = "";
 
   switch (e.target.value) {
     case "FW":
-      setPlayerCardsFW(players.filter((player) => player.position === "FW"));
+      setPlayerCardsFW(
+        players.filter(
+          (player) =>
+            player.position === "FW" && player.team === teamsDropdownList.value
+        )
+      );
       break;
     case "MF":
-      setPlayerCardsMF(players.filter((player) => player.position === "MF"));
+      setPlayerCardsMF(
+        players.filter(
+          (player) =>
+            player.position === "MF" && player.team === teamsDropdownList.value
+        )
+      );
       break;
     case "DF":
-      setPlayerCardsDF(players.filter((player) => player.position === "DF"));
+      setPlayerCardsDF(
+        players.filter(
+          (player) =>
+            player.position === "DF" && player.team === teamsDropdownList.value
+        )
+      );
       break;
     case "GK":
-      setPlayerCardsGK(players.filter((player) => player.position === "GK"));
+      setPlayerCardsGK(
+        players.filter(
+          (player) =>
+            player.position === "GK" && player.team === teamsDropdownList.value
+        )
+      );
       break;
     default:
-      setPlayerCards();
+      setPlayerCards(
+        players.filter((player) => player.team === teamsDropdownList.value)
+      );
       break;
   }
 });
